@@ -1,0 +1,69 @@
+body {
+    background-color: #ffe6f0;
+    margin: 0;
+    padding: 30px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff0f6;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+h1, h2 {
+    color: #d4005f;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff80ab;
+    border-radius: 8px;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 5px;
+    background-color: #ff80ab;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e66f98;
+}
+
+button.cancelar {
+    background-color: #ffb6c1;
+    color: #800040;
+}
+
+button.cancelar:hover {
+    background-color: #ffa0b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.small {
+    font-size: 0.9em;
+    color: #b3004c;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Mercado</title>
+</head>
+<body>
+
+<h1>Lista de Mercado</h1>
+
+<input type="text" id="item" placeholder="Digite o item">
+<button onclick="salvar()">Salvar</button>
+
+<div class="box">
+    <h3>Item Atual:</h3>
+    <p id="resultado">nenhum item salvo</p>
+
+    <button onclick="editar()">Editar</button>
+    <button onclick="excluir()">Excluir</button>
+</div>
+
+<script>
+carregar();
+
+function salvar() {
+    const item = document.getElementById("item").value.trim();
+
+    if (!item) {
+        alert("Digite um item.");
+        return;
+    }
+
+
+    localStorage.setItem("itemMercado", item);
+
+    document.getElementById("item").value = "";
+    carregar();
+}
+
+function carregar() {
+    const salvo = localStorage.getItem("itemMercado");
+
+    document.getElementById("resultado").textContent = salvo
+        ? salvo
+        : "nenhum item salvo.";
+}
+
+
+function excluir() {
+    if (!localStorage.getItem("itemMercado")) {
+        alert("Nenhum item para excluir.");
+        return;
+    }
+
+    localStorage.removeItem("itemMercado");
+    carregar();
+}
+</script>
+
+</body>
+</html>
