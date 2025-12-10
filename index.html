@@ -12,7 +12,7 @@
 <button onclick="salvar()">Salvar</button>
 
 <div class="box">
-    <h3>Item Atual:</h3>
+    <h3>Itens:</h3>
     <p id="resultado">nenhum item salvo</p>
 
     <button onclick="editar()">Editar</button>
@@ -20,7 +20,36 @@
 </div>
 
 <script>
-carregar();
+
+const inputTarefa = document.getElementById('item');
+const botaoAdicionar = document.getElementById('adicionarBtn');
+const listaTarefas = document.getElementById('listaTarefas');
+
+botaoAdicionar.addEventListener('click', function() {
+
+    const textoDaTarefa = inputTarefa.value.trim(); 
+
+    if (textoDaTarefa !== "") {
+        const novoItem = document.createElement('li');
+
+        novoItem.textContent = textoDaTarefa;
+
+        listaTarefas.appendChild(novoItem);
+
+        inputTarefa.value = '';
+        inputTarefa.focus();
+    } else {
+        alert("Por favor, digite uma tarefa!");
+    }
+});
+
+inputTarefa.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        botaoAdicionar.click();
+    }
+});
+
+
 
 function salvar() {
     const item = document.getElementById("item").value.trim();
@@ -29,8 +58,6 @@ function salvar() {
         alert("Digite um item.");
         return;
     }
-
-
     localStorage.setItem("itemMercado", item);
 
     document.getElementById("item").value = "";
