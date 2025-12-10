@@ -12,10 +12,6 @@ body {
     border-radius: 15px;
 }
 
-h1, h2 {
-    color: #d4005f;
-    margin-bottom: 20px;
-}
 
 label {
     display: block;
@@ -41,8 +37,6 @@ button {
     margin-top: 5px;
     background-color: #ff80ab;
     color: white;
-    border: none;
-    border-radius: 8px;
     cursor: pointer;
 }
 
